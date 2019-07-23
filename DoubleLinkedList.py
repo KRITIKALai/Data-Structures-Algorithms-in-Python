@@ -38,6 +38,18 @@ class LinkedList(object):
         obj.next = next_current
         obj.prev = prev_current
         
+    def delete(self, val):
+        current = self.head
+        prev_current = None
+        next_current = current.next
+        
+        while current.value != val:
+            current = current.next
+            prev_current = current.prev
+            next_current = current.next
+            
+        prev_current.next = next_current
+        next_current.prev = prev_current
         
     def printLL(self):
         current = self.head
